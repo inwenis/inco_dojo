@@ -6,7 +6,7 @@ open Characters
 
 [<Test>]
 let ParsingEmptyInputShouldReturnNone () =
-    let actual = parse ""
+    let actual = parseDigit ""
     Assert.AreEqual(None, actual)
 
 [<TestCase(one, 1)>]
@@ -20,5 +20,16 @@ let ParsingEmptyInputShouldReturnNone () =
 [<TestCase(nine, 9)>]
 [<TestCase(zero, 0)>]
 let parseSingleCharacter (input, expected) =
-    let actual = parse input
+    let actual = parseDigit input
     Assert.AreEqual(Some expected, actual)
+
+[<Test>]
+let parseTwoCharacters () =
+    let input = """
+    _  _     _  _  _  _  _ 
+  | _| _||_||_ |_   ||_||_|
+  ||_  _|  | _||_|  ||_| _|
+
+"""
+    let actual = parseDigit input
+    Assert.AreEqual(Some [1, 2, 3, 4, 5, 6, 7, 8, 9], actual)

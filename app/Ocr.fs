@@ -1,8 +1,9 @@
 module ocr
 
+open System
 open Characters
 
-let parse (input: string)  =
+let parseDigit (input: string)  =
     match input with
     | x when x = one -> Some 1
     | x when x = two -> Some 2
@@ -16,3 +17,14 @@ let parse (input: string)  =
     | x when x = zero -> Some 0
     | _ -> None
     
+let parse (input: string) = 
+    input.Split("\n", StringSplitOptions.RemoveEmptyEntries)
+    |> Array.collect (fun l ->
+        l.ToCharArray()
+        |> Array.chunkBySize 3
+        |> Array.mapi (fun i c -> i, c) )
+    |> Array.groupBy fst
+    |> Array.map snd
+    |> Array.map (fun x -> x |> Array.map snd |> Array.map (fun cs -> String(cs)) |> String.concat "\n")
+    |> Array.map parseDigit
+    |> Array.toList
