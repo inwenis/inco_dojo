@@ -1,13 +1,6 @@
 module ocr
 
-[<Literal>]
-let one =
-    """
-   
-  |
-  |
-
-"""
+open Characters
 
 let parse (input: string)  =
     if input = one then Some 1

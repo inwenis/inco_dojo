@@ -2,19 +2,7 @@ module tests
 
 open NUnit.Framework
 open ocr
-
-[<Literal>]
-let one =
-    """
-   
-  |
-  |
-
-"""
-
-[<SetUp>]
-let Setup () =
-    ()
+open Characters
 
 [<Test>]
 let ParsingEmptyInputShouldReturnNone () =
