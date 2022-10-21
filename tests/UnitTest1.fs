@@ -1,11 +1,14 @@
 module tests
 
 open NUnit.Framework
+open ocr
+
 
 [<SetUp>]
 let Setup () =
     ()
 
 [<Test>]
-let Test1 () =
-    Assert.Pass()
+let ParsingEmptyInputShouldReturnNone () =
+    let actual = parse ""
+    Assert.AreEqual(None, actual)
