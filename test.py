@@ -7,5 +7,10 @@ class TestMonkey(unittest.TestCase):
         result = add(input)
         self.assertEqual(0, result)
 
+    def test_single_number(self):
+        input = "1"
+        result = add(input)
+        self.assertEqual(1, result)
+
 if __name__ == "__main__":
     unittest.main()
