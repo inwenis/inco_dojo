@@ -1,4 +1,7 @@
 def add(input):
+    if input.startswith("//"):
+        input = input[4::]
+
     if not input:
         return 0
 
