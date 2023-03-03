@@ -12,5 +12,10 @@ class TestMonkey(unittest.TestCase):
         result = add(input)
         self.assertEqual(1, result)
 
+    def test_two_numbers(self):
+        input = "1,2"
+        result = add(input)
+        self.assertEqual(3, result)
+
 if __name__ == "__main__":
     unittest.main()
