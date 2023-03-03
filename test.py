@@ -1,9 +1,11 @@
 import unittest
-
+from main import *
 
 class TestMonkey(unittest.TestCase):
-    def test_whatever(self):
-        self.assertEqual(False, True)
+    def test_empty_string(self):
+        input = ""
+        result = add(input)
+        self.assertEqual(0, result)
 
 if __name__ == "__main__":
     unittest.main()
