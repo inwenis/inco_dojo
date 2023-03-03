@@ -54,10 +54,15 @@ class TestMonkey(unittest.TestCase):
 
     def test_dont_allow_a_single_negative_number_and_throw_meaningful_exception(self):
         input = "-1"
-        self.assertRaises(Exception, add, input)
         with self.assertRaises(Exception) as cm:
             add(input)
-            self.assertIn("negatives not allowed: -1", str(cm.exception))
+        self.assertIn("negatives not allowed: -1", str(cm.exception))
+
+    def test_dont_allow_single_negative_number_exception_doesnt_contain_positive_number(self):
+        input = "-1,2"
+        with self.assertRaises(Exception) as cm:
+            add(input)
+        self.assertNotIn("2", str(cm.exception))
 
 if __name__ == "__main__":
     unittest.main()
