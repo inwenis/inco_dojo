@@ -27,5 +27,10 @@ class TestMonkey(unittest.TestCase):
         result = add(input)
         self.assertEqual(3, result)
 
+    def test_two_multi_digit_numbers_separated_by_newline(self):
+        input = "30\n12"
+        result = add(input)
+        self.assertEqual(42, result)
+
 if __name__ == "__main__":
     unittest.main()

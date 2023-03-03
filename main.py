@@ -3,7 +3,8 @@ def add(input):
         return 0
 
     if "\n" in input:
-        return int(input[0]) + int(input[2])
+        token = input.split("\n")
+        return int(token[0]) + int(token[1])
 
     token = input.split(",")
     return sum([int(x) for x in token])
