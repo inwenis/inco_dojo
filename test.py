@@ -64,5 +64,10 @@ class TestMonkey(unittest.TestCase):
             add(input)
         self.assertNotIn("2", str(cm.exception))
 
+    def test_ignore_single_number_above_1000(self):
+        input = "1001"
+        result = add(input)
+        self.assertEqual(0, result)
+
 if __name__ == "__main__":
     unittest.main()

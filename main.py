@@ -15,5 +15,4 @@ def add(input):
     if negatives:
         raise Exception(f"negatives not allowed: {','.join(negatives)}")
 
-    return sum([int(x) for x in token])
-
+    return sum([int(x) for x in token if int(x) < 1000])
