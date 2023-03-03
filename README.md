@@ -5,6 +5,8 @@ Participants: @fku @mfi @ast @jkr
 Kata: String calculator
 https://osherove.com/tdd-kata-1
 
+we stopped implementing point 6.
+
 Before you start:
 Try not to read ahead.
 
