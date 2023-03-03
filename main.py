@@ -4,7 +4,7 @@ def add(input):
 
     if "\n" in input:
         token = input.split("\n")
-        return int(token[0]) + int(token[1])
+        return sum([int(x) for x in token])
 
     token = input.split(",")
     return sum([int(x) for x in token])
