@@ -42,10 +42,15 @@ class TestMonkey(unittest.TestCase):
         result = add(input)
         self.assertEqual(6, result)
 
-    def test_should_work_for_single_delimiter_specified_in_input(self):
+    def test_should_work_for_single_delimiter_specified_in_input_and_no_value(self):
         input = "//;\n"
         result = add(input)
         self.assertEqual(0, result)
+
+    def test_should_work_for_single_delimiter_specified_in_input_and_some_values(self):
+        input = "//;\n1;2;3"
+        result = add(input)
+        self.assertEqual(6, result)
 
 if __name__ == "__main__":
     unittest.main()
