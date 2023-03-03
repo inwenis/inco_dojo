@@ -31,9 +31,14 @@ class TestMonkey(unittest.TestCase):
         input = "30\n12"
         result = add(input)
         self.assertEqual(42, result)
-    
+
     def test_more_than_two_numbers_only_separated_by_newline(self):
         input = "1\n2\n3"
+        result = add(input)
+        self.assertEqual(6, result)
+
+    def test_more_than_two_numbers_mixed_separators(self):
+        input = "1,2\n3"
         result = add(input)
         self.assertEqual(6, result)
 
