@@ -1,7 +1,7 @@
 def add(input):
     if "," in input:
         token = input.split(",")
-        return int(token[0]) + int(token[1])
+        return sum([int(x) for x in token])
 
     if input:
         return int(input)

@@ -17,5 +17,10 @@ class TestMonkey(unittest.TestCase):
         result = add(input)
         self.assertEqual(3, result)
 
+    def test_more_than_two(self):
+        input = "1,2,3"
+        result = add(input)
+        self.assertEqual(6, result)
+
 if __name__ == "__main__":
     unittest.main()
