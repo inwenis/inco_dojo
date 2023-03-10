@@ -15,7 +15,7 @@ def add_new_lines(input):
     space_counter = 1
     increment = 2
     for ch in input:
-        if ch == 'A':
+        if ch == "A":
             res += ch + "\n"
         else:
             res += ch + " " * space_counter + ch + "\n"
