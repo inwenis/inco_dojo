@@ -9,6 +9,15 @@ def letters(input):
     rev = "".join(reversed(letters))
     return letters + rev[1:]
 
+def add_new_lines(input):
+    res = ""
+    for ch in input:
+        if ch == 'A':
+            res += ch + "\n"
+        else:
+            res += ch + ch + "\n"
+    return res[:-1]
+
 def diamond(input):
     return letters(input)
 

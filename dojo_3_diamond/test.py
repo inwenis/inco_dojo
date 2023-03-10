@@ -21,5 +21,9 @@ class TestMonkey(unittest.TestCase):
     def test_return_correct_letters_in_order(self):
         result = letters("C")
         self.assertEqual("ABCBA", result)
+
+    def test_return_correct_double_letters_separated_by_lines(self):
+        result = add_new_lines(letters("C"))
+        self.assertEqual("A\nBB\nCC\nBB\nA", result)
 if __name__ == "__main__":
     unittest.main()
