@@ -22,25 +22,6 @@ class TestMonkey(unittest.TestCase):
         result = letters("C")
         self.assertEqual("ABCBA", result)
 
-    def test_return_correct_diamond_rows_up_to_b(self):
-        result = add_new_lines(letters("B"))
-        self.assertEqual("A\nB B\nA", result)
-
-    def test_return_correct_diamond_rows_up_to_c(self):
-        result = add_new_lines(letters("C"))
-        self.assertEqual("A\nB B\nC   C\nB B\nA", result)
-
-    def test_return_correct_diamond_rows_up_to_c(self):
-        result = add_new_lines(letters("D"))
-        self.assertEqual(
-        """A
-B B
-C   C
-D     D
-C   C
-B B
-A""", result)
-        
     def test_return_correct_diamond_A(self):
         result = indentNoOfSpaces("A", "A")
         self.assertEqual(0, result)
@@ -48,6 +29,10 @@ A""", result)
     def test_return_correct_diamond_C(self):
         result = indentNoOfSpaces("C", "A")
         self.assertEqual(2, result)
+
+    def test_return_correct_diamond_up_to_c(self):
+        result = add_new_lines(letters("C"))
+        self.assertEqual("  A\n B B\nC   C\n B B\n  A", result)
 
 if __name__ == "__main__":
     unittest.main()

@@ -19,9 +19,9 @@ def add_new_lines(input):
     middle = len(input)//2
     for (idx,ch) in enumerate(input):
         if ch == "A":
-            res += ch + "\n"
+            res += " " * indentNoOfSpaces(input[middle], ch) + ch + "\n"
         else:
-            res += ch + " " * space_counter + ch + "\n"
+            res += " " * indentNoOfSpaces(input[middle], ch) + ch + " " * space_counter + ch + "\n"
             if idx == middle:
                 increment = -2
             space_counter = space_counter + increment
@@ -30,3 +30,6 @@ def add_new_lines(input):
 
 def diamond(input):
     return letters(input)
+
+
+print(add_new_lines(letters("C")))
