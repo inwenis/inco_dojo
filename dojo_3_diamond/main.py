@@ -9,13 +9,20 @@ def letters(input):
     rev = "".join(reversed(letters))
     return letters + rev[1:]
 
+# "" - 2N -1
 def add_new_lines(input):
     res = ""
+    space_counter = 1
+    increment = 2
     for ch in input:
         if ch == 'A':
             res += ch + "\n"
         else:
-            res += ch + " " + ch + "\n"
+            res += ch + " " * space_counter + ch + "\n"
+            if ch == "C":
+                increment = -2
+            space_counter = space_counter + increment
+
     return res[:-1]
 
 def diamond(input):
