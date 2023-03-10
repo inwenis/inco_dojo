@@ -5,8 +5,6 @@ def set_of_letters(input):
     return ascii_uppercase[:index + 1]
 
 def diamond(input):
-    if input == 'A':
-        return input
     letters = set_of_letters(input)
     rev = "".join(reversed(letters))
     return letters + rev[1:]
