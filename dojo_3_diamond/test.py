@@ -30,5 +30,16 @@ class TestMonkey(unittest.TestCase):
         result = add_new_lines(letters("C"))
         self.assertEqual("A\nB B\nC   C\nB B\nA", result)
 
+    def test_return_correct_diamond_rows_up_to_c(self):
+        result = add_new_lines(letters("D"))
+        self.assertEqual(
+        """A
+B B
+C   C
+D     D
+C   C
+B B
+A""", result)
+
 if __name__ == "__main__":
     unittest.main()
