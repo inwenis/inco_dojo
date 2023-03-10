@@ -10,5 +10,9 @@ class TestMonkey(unittest.TestCase):
         result = set_of_letters("B")
         self.assertEqual("AB", result)
 
+    def test_return_correct_set_of_letters_singleton(self):
+        result = set_of_letters("A")
+        self.assertEqual("A", result)
+
 if __name__ == "__main__":
     unittest.main()
