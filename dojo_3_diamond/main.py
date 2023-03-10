@@ -1,1 +1,3 @@
-print("hellow this is main")
+def diamond(input):
+    return input
+
