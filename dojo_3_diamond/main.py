@@ -15,7 +15,7 @@ def add_new_lines(input):
         if ch == 'A':
             res += ch + "\n"
         else:
-            res += ch + ch + "\n"
+            res += ch + " " + ch + "\n"
     return res[:-1]
 
 def diamond(input):

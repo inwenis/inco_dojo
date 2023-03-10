@@ -22,8 +22,10 @@ class TestMonkey(unittest.TestCase):
         result = letters("C")
         self.assertEqual("ABCBA", result)
 
-    def test_return_correct_double_letters_separated_by_lines(self):
-        result = add_new_lines(letters("C"))
-        self.assertEqual("A\nBB\nCC\nBB\nA", result)
+    def test_return_correct_diamond_rows_up_to_b(self):
+        result = add_new_lines(letters("B"))
+        self.assertEqual("A\nB B\nA", result)
+
+
 if __name__ == "__main__":
     unittest.main()
