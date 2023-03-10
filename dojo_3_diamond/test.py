@@ -41,9 +41,13 @@ C   C
 B B
 A""", result)
         
-    def test_return_correct_diamond_B(self):
+    def test_return_correct_diamond_A(self):
         result = indentNoOfSpaces("A", "A")
         self.assertEqual(0, result)
+
+    def test_return_correct_diamond_C(self):
+        result = indentNoOfSpaces("C", "A")
+        self.assertEqual(2, result)
 
 if __name__ == "__main__":
     unittest.main()

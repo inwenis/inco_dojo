@@ -10,7 +10,7 @@ def letters(input):
     return letters + rev[1:]
 
 def indentNoOfSpaces(inputLetter, rowLetter):
-    return 0
+    return ord(inputLetter) - ord(rowLetter)
 
 def add_new_lines(input):
     res = ""
