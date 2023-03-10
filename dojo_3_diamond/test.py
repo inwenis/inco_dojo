@@ -14,5 +14,9 @@ class TestMonkey(unittest.TestCase):
         result = set_of_letters("A")
         self.assertEqual("A", result)
 
+    def test_return_correct_set_of_letters_abc(self):
+        result = set_of_letters("C")
+        self.assertEqual("ABC", result)
+
 if __name__ == "__main__":
     unittest.main()
