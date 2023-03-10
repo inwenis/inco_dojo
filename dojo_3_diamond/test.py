@@ -6,7 +6,7 @@ class TestMonkey(unittest.TestCase):
         result = diamond("A")
         self.assertEqual("A", result)
 
-    def return_correct_set_of_letters(self):
+    def test_return_correct_set_of_letters(self):
         result = set_of_letters("B")
         self.assertEqual("AB", result)
 
