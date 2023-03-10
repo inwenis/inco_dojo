@@ -9,6 +9,9 @@ def letters(input):
     rev = "".join(reversed(letters))
     return letters + rev[1:]
 
+def indentNoOfSpaces(inputLetter, rowLetter):
+    return 0
+
 def add_new_lines(input):
     res = ""
     space_counter = 1
