@@ -8,23 +8,23 @@ def indentNoOfSpaces(inputLetter, rowLetter):
     return ord(inputLetter) - ord(rowLetter)
 
 def diamond_top(letter, input):
-    res = ""
+    res = []
     space_counter = 1
     increment = 2
     for ch in input:
         if ch == "A":
-            res += " " * indentNoOfSpaces(letter, ch) + ch + "\n"
+            res.append(" " * indentNoOfSpaces(letter, ch) + ch)
         else:
-            res += " " * indentNoOfSpaces(letter, ch) + ch + " " * space_counter + ch + "\n"
+            res.append(" " * indentNoOfSpaces(letter, ch) + ch + " " * space_counter + ch)
             space_counter = space_counter + increment
 
-    return res[:-1]
+    return res
 
 def diamond(letter):
     letters = set_of_letters(letter)
     top = diamond_top(letter, letters)
-    bot = "\n".join(list(reversed(top.split('\n')))[1:])
-    return top + "\n" + bot
+    bot = list(reversed(top))[1:]
+    return "\n".join(top + bot)
 
 
 print(diamond("I"))
