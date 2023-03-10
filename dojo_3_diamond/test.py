@@ -18,5 +18,8 @@ class TestMonkey(unittest.TestCase):
         result = set_of_letters("C")
         self.assertEqual("ABC", result)
 
+    def test_return_correct_letters_in_order(self):
+        result = diamond("C")
+        self.assertEqual("ABCBA", result)
 if __name__ == "__main__":
     unittest.main()
